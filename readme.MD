@@ -9,3 +9,9 @@ Links:
 * https://spring.io/guides/gs/multi-module/
 * http://spring.io/projects/spring-cloud-netflix
 * https://www.baeldung.com/dockerizing-spring-boot-application
+
+Mordern Webpack:
+* https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/
+* https://spring.io/guides/tutorials/react-and-spring-data-rest/
+* https://www.npmjs.com/package/webpack-dev-server
+* https://github.com/webpack/docs/wiki/webpack-dev-server

@@ -10,7 +10,7 @@
 
     <modules>
         <module>library</module>
-        <!-- TODO: APP <module>front-app</module> -->
+        <module>front-app</module>
         <module>front-web</module>
         <module>accountapi</module>
         <module>lobbyapi</module>
