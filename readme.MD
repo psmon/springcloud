@@ -8,3 +8,4 @@ Distributed Micro Services Using Modern Web
 Links:
 * https://spring.io/guides/gs/multi-module/
 * http://spring.io/projects/spring-cloud-netflix
+* https://www.baeldung.com/dockerizing-spring-boot-application
