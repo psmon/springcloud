@@ -3,32 +3,7 @@
 Goal:
 Distributed Micro Services Using Modern Web
 
-
-'
-                                   +------+
-                           +------>|api1  |
-                           |       |      |
- +------+                  |       +------+
- |      |                  |
- |front |     +--------+   |
- |      +-----+        |   +       +------+
- +---+--+     |gateway +--++       |api1  |
-     |        |        |   +------->      |
-     |        +--------+   |       +------+
-     |                     |
-     |                     |
-     |                     |
-     +-->+--v------+       |       +------+
-         |discovery|       |       |api2  |
-         |         |       +------>|      |
-         +---------+       |       +------+
-                           |
-                           |
-                           |       +------+
-                           |       |api2  |
-                           +------>|      |
-                                   +------+
-'
+![Alt text](https://blog.codecentric.de/files/2017/05/multiple-apps-spring-boot-cloud-netflix.png)
 
 Links:
 * https://spring.io/guides/gs/multi-module/
