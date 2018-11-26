@@ -3,8 +3,8 @@
 Goal:
 Distributed Micro Services Using Modern Web
 
-<pre>
 
+'
                                    +------+
                            +------>|api1  |
                            |       |      |
@@ -28,7 +28,7 @@ Distributed Micro Services Using Modern Web
                            |       |api2  |
                            +------>|      |
                                    +------+
-</pre>
+'
 
 Links:
 * https://spring.io/guides/gs/multi-module/
