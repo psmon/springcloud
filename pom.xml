@@ -10,7 +10,6 @@
 
     <modules>
         <module>library</module>
-        <module>front-app</module>
         <module>front-web</module>
         <module>accountapi</module>
         <module>lobbyapi</module>

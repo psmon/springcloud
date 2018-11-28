@@ -15,3 +15,5 @@ Mordern Webpack:
 * https://spring.io/guides/tutorials/react-and-spring-data-rest/
 * https://www.npmjs.com/package/webpack-dev-server
 * https://github.com/webpack/docs/wiki/webpack-dev-server
+* https://github.com/eirslett/frontend-maven-plugin
+* https://medium.com/@konstantinnalum/my-first-post-dadb296a87d2

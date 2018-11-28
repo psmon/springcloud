@@ -29,3 +29,5 @@
 /gameapi/.mvn/wrapper
 /library/.mvn/wrapper
 /lobbyapi/.mvn/wrapper
+/front-web/src/main/frontend/build
+/front-web/src/main/frontend/node_modules
