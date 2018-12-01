@@ -1,0 +1,30 @@
+# centralized-configuration 
+
+FileName: {appname}.yaml
+
+## Setting 
+    ---
+    spring:
+      profiles: local
+    
+    message: "hello, spring cloud -local"
+    
+    ---
+    spring:
+      profiles: dock-local
+    
+    message: "hello, spring cloud -local"
+    
+    ---
+    
+    spring:
+      profiles: dev
+    
+    message: "hello, spring cloud -dev"
+    
+    ---
+    
+    spring:
+      profiles: production
+    
+    message: "hello, spring cloud -production"
