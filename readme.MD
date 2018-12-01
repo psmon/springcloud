@@ -11,6 +11,7 @@ Practice in code:
 
 Ref Links:
 * https://spring.io/guides/gs/multi-module/
+* https://spring.io/guides/gs/centralized-configuration/
 * http://spring.io/projects/spring-cloud-netflix
 * https://www.baeldung.com/dockerizing-spring-boot-application
 * https://github.com/jonashackt/cxf-spring-cloud-netflix-docker
