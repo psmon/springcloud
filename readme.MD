@@ -16,3 +16,4 @@ Ref Links:
 * https://www.baeldung.com/dockerizing-spring-boot-application
 * https://github.com/jonashackt/cxf-spring-cloud-netflix-docker
 * https://doc.akka.io/docs/akka/2.5/cluster-usage.html
+* https://www.baeldung.com/spring-boot-actuators
