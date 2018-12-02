@@ -3,9 +3,6 @@
 Goal:
 Distributed Micro Services Using Docker
 
-![Alt text](https://blog.codecentric.de/files/2017/05/multiple-apps-spring-boot-cloud-netflix.png)
-
-Practice in code:
 ![Alt text](http://wiki.webnori.com/download/attachments/16646192/image2018-12-1_2-43-49.png?version=1&modificationDate=1543599828672&api=v2)
 
 Documents:
