@@ -1,6 +1,6 @@
 # Spring Cloud for Distributed applications
 
-Goal:
+##Goal
 Distributed Micro Services Using Docker
 
 ![Alt text](http://wiki.webnori.com/download/attachments/16646192/image2018-12-1_2-43-49.png?version=1&modificationDate=1543599828672&api=v2)
@@ -9,11 +9,26 @@ Documents:
 * WIKI - http://wiki.webnori.com/display/webfr/Spring+Cloud+MicroService
 * CONFIG - http://git.webnori.com/projects/SB2/repos/cloudconfig/browse
 
-Ref Links:
+## Ref Links
+
+Spring Cloud :
 * https://spring.io/guides/gs/multi-module/
 * https://spring.io/guides/gs/centralized-configuration/
+* https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-ribbon.html
 * http://spring.io/projects/spring-cloud-netflix
 * https://www.baeldung.com/dockerizing-spring-boot-application
+
+Docker:
 * https://github.com/jonashackt/cxf-spring-cloud-netflix-docker
+* https://code.visualstudio.com/docs/java/java-container
+
+ETC : 
 * https://doc.akka.io/docs/akka/2.5/cluster-usage.html
 * https://www.baeldung.com/spring-boot-actuators
+
+## Running
+
+Local with Env
+* APPDIR> mvn spring-boot:run -Dspring.profiles.active="local"
+
+

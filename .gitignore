@@ -31,3 +31,6 @@
 /lobbyapi/.mvn/wrapper
 /front-web/src/main/frontend/build
 /front-web/src/main/frontend/node_modules
+/.vscode
+/config-service/.mvn/wrapper
+/eureka-serviceregistry/.mvn/wrapper
