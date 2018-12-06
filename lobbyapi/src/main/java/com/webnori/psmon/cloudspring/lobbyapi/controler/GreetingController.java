@@ -1,6 +1,7 @@
 package com.webnori.psmon.cloudspring.lobbyapi.controler;
 
 
+import com.webnori.psmon.cloudspring.library.service.MyService;
 import com.webnori.psmon.cloudspring.lobbyapi.restclient.AccountClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,12 @@ public class GreetingController {
     @Autowired
     AccountClient accountClient;
 
+    private final MyService myService;
+
+    public GreetingController(MyService myService) {
+        this.myService = myService;
+    }
+
     // Config Server Test
     @Value("${message:Hello default}")
     private String message;
@@ -30,6 +37,11 @@ public class GreetingController {
     @RequestMapping("/message")
     String getMessage() {
         return this.message;
+    }
+
+    @RequestMapping("/message2")
+    String getMessage2() {
+        return myService.message();
     }
 
     @GetMapping("/organization/{organizationId}/with-employees")

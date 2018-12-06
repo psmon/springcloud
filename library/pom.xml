@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>library</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${app.libray.version}</version>
 	<packaging>jar</packaging>
 
 	<name>library</name>
@@ -31,15 +31,5 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-
 
 </project>
