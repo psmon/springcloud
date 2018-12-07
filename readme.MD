@@ -12,9 +12,14 @@ Documents:
 ## Local Run
 * FullBuild : mvn clean install
 * APPRun : mvn spring-boot:run -Dspring.profiles.active="local"
+* Recommend : Spring Dashboard
 
-
-
+## Service Concept
+* AccountAPI : DB(JPA) / Rest
+* LobbyAPI : Rest / Websocket / DB(JPA)
+* GameAPI : WebSocket , WithOut RDB
+* Front : Only JavaScript ( React or Other.js) 
+* COMMON : Spring Boot 2.0  ,Message to EachService(Akka Actor) , Swagger(/swagger-ui.html)
 ## Ref Links
 
 Spring Cloud :
