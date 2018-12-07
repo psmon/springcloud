@@ -8,6 +8,6 @@ import java.util.List;
 
 @FeignClient(name = "accountapi")
 public interface AccountClient {
-    @GetMapping("/department/{departmentId}")
+    @GetMapping("/demo/department/{departmentId}")
     List findByDepartment(@PathVariable("departmentId") String departmentId);
 }

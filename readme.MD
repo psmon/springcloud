@@ -3,7 +3,7 @@
 ##Goal
 Distributed Micro Services Using Docker
 
-![Alt text](http://wiki.webnori.com/download/attachments/16646192/image2018-12-1_2-43-49.png?version=1&modificationDate=1543599828672&api=v2)
+![Alt text](http://wiki.webnori.com/download/attachments/16646192/spring-cloud-arc.png?api=v2)
 
 Documents:
 * WIKI - http://wiki.webnori.com/display/webfr/Spring+Cloud+MicroService
