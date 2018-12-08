@@ -1,6 +1,7 @@
 package com.webnori.psmon.cloudspring.accountapi;
 
 import akka.actor.ActorRef;
+import akka.actor.ActorSelection;
 import akka.actor.ActorSystem;
 import akka.util.Timeout;
 import com.webnori.psmon.cloudspring.accountapi.config.SpringExtension;
@@ -34,6 +35,9 @@ public class AccountapiApplication {
 				.props("greetingActor"), "greeter");
 
 		greeter.tell(new Greet("Spring Boot Start -AccountAPI"),ActorRef.noSender());
+
+		// How to send a message to an actor from another remote application
+		//ActorSelection remoteGreeter = system.actorSelection("akka.tcp://akka-accountapi@127.0.0.1:9999/user/greeter");
 
 	}
 }

@@ -8,6 +8,19 @@
 ### Bad
 ![goal](doc-res/def-complex.png)
 
+## Messaging with AKKA System
+
+![goal](doc-res/akka-actorpath.png)
+
+* [Akka Setting with Spring ](../accountapi/src/main/java/com/webnori/psmon/cloudspring/accountapi/config)
+* [Actor](../accountapi/src/main/java/com/webnori/psmon/cloudspring/accountapi/actor)
+* [Message](../library/src/main/java/com/webnori/psmon/cloudspring/library/common/message)
+
+
+    // How to send a message to an actor from another remote application
+    ActorSelection remoteGreeter = system.actorSelection("akka.tcp://akka-accountapi@127.0.0.1:9999/user/greeter");
+    remoteGreeter.tell(new Greet("This is Remote Message"),ActorRef.noSender());
+
 ## Deploy Goals
 * Local for Allin-One Service
 * DockerCompose in Local and Cloud for Test

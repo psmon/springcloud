@@ -5,7 +5,6 @@ Distributed Micro Game Services Using Spring Cloud
 
 ![Alt text](library/doc-res/spring-cloud-arc.png)
 
-
 # Centeralized Config
 * http://git.webnori.com/projects/SB2/repos/cloudconfig/browse
 
@@ -23,13 +22,13 @@ Distributed Micro Game Services Using Spring Cloud
 * kubernetes/{APPNAME}.yaml
 
 ## Service Concept
-* [ConfigService](config-service/readme.MD) : Centerlized config - [Sample](/library/config-sample) -Sprint Cloud Config
-* [DiscoveryService](eureka-serviceregistry/readme.MD) : Manage distributed applications -Spring Cloud Eureka
-* [AccountAPI](accountapi/readme.MD) : Manage User account and items. -JPA
-* [LobbyAPI](lobbyapi/readme.MD) : Provide services beyond games, including navigating games and entering.
-* [GameAPI](gameapi/readme.MD) : Realtime messages are mainly processed. Services for playing games -Actor Message
-* [FrontWeb](front-web/readme.MD) : Modern web applications to be displayed to users -HTML5
-* [Common](library/readme.MD) : Common Depency (Document or AKKA or ANY)
+* [ConfigService](config-service) : Centerlized config - [Sample](/library/config-sample) -Sprint Cloud Config
+* [DiscoveryService](eureka-serviceregistry) : Manage distributed applications -Spring Cloud Eureka
+* [AccountAPI](accountapi) : Manage User account and items. -JPA
+* [LobbyAPI](lobbyapi) : Provide services beyond games, including navigating games and entering.
+* [GameAPI](gameapi) : Realtime messages are mainly processed. Services for playing games -Actor Message
+* [FrontWeb](front-web) : Modern web applications to be displayed to users -HTML5
+* [Common](library) : Common Depency (Document or AKKA or ANY)
 
 
 ## Documents(KOR):
