@@ -1,6 +1,8 @@
 
 # Ref Links
 
+This project has been reorganized into a working combination that works well through various documents.
+
 ## Spring Cloud :
 * https://spring.io/guides/gs/multi-module/
 * https://spring.io/guides/gs/centralized-configuration/
@@ -37,7 +39,6 @@
 * https://docs.docker.com/engine/reference/commandline/docker/#child-commands
 * http://www.littlebigextra.com/use-spring-profiles-docker-containers/
 
-
-ETC : 
-
+## ETC : 
 * https://www.baeldung.com/spring-boot-actuators
+* https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
