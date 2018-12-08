@@ -7,6 +7,8 @@
 * https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-ribbon.html
 * http://spring.io/projects/spring-cloud-netflix
 * https://www.baeldung.com/dockerizing-spring-boot-application
+* https://dzone.com/articles/microservices-tutorial-ribbon-as-a-load-balancer-1
+* https://coe.gitbook.io/guide/
 
 ## Spring With AKKA:
 * https://www.baeldung.com/akka-with-spring
@@ -25,6 +27,8 @@
 * https://github.com/eirslett/frontend-maven-plugin
 * https://medium.com/@konstantinnalum/my-first-post-dadb296a87d2
 
+## UnitTest:
+* https://spring.io/guides/gs/testing-web/
 
 ## Docker:
 * https://github.com/jonashackt/cxf-spring-cloud-netflix-docker

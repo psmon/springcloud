@@ -7,6 +7,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableConfigServer
+@EnableDiscoveryClient
 @SpringBootApplication
 @EnableSwagger2
 public class ConfigServiceApplication {
