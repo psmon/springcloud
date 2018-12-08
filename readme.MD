@@ -23,12 +23,12 @@ Distributed Micro Game Services Using Spring Cloud
 * kubernetes/{APPNAME}.yaml
 
 ## Service Concept
-* [ConfigService](config-service/readme.MD) : Centerlized config - [Sample](/library/config-sample)
-* [DiscoveryService](eureka-serviceregistry/readme.MD) : Con
-* [AccountAPI](accountapi/readme.MD) : DB(JPA) / Rest
-* [LobbyAPI](lobbyapi/readme.MD) : DB(JPA) / Rest
-* [GameAPI](gameapi/readme.MD) : DB(JPA) / Rest
-* [FrontWeb](front-web/readme.MD) : React Web Application
+* [ConfigService](config-service/readme.MD) : Centerlized config - [Sample](/library/config-sample) -Sprint Cloud Config
+* [DiscoveryService](eureka-serviceregistry/readme.MD) : Manage distributed applications -Spring Cloud Eureka
+* [AccountAPI](accountapi/readme.MD) : Manage User account and items. -JPA
+* [LobbyAPI](lobbyapi/readme.MD) : Provide services beyond games, including navigating games and entering.
+* [GameAPI](gameapi/readme.MD) : Realtime messages are mainly processed. Services for playing games -Actor Message
+* [FrontWeb](front-web/readme.MD) : Modern web applications to be displayed to users -HTML5
 * [Common](library/readme.MD) : Common Depency (Document or AKKA or ANY)
 
 
