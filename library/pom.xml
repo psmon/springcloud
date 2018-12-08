@@ -18,8 +18,7 @@
 	</parent>
 
 	<properties>
-		<swagger2.version>2.9.2</swagger2.version>
-		<akka.verion>2.5.16</akka.verion>
+
 	</properties>
 
 	<dependencies>
@@ -43,7 +42,7 @@
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
 			<artifactId>akka-actor_2.11</artifactId>
-			<version>${akka.verion}</version>
+			<version>${akka.version}</version>
 		</dependency>
 
 		<dependency>
