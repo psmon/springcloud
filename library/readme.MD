@@ -1,4 +1,18 @@
-# Tools and Some Document
+# Tools and Other Concept
+
+## Dependency Goals
+
+### Good
+![goal](doc-res/def-simple.png)
+
+### Bad
+![goal](doc-res/def-complex.png)
+
+## Deploy Goals
+* Local for Allin-One Service
+* DockerCompose in Local and Cloud for Test
+* Kubernetes in Cloud for Proud
+* Supports various environments through centralized setting - [more detail](../config-service)
 
 ## Mysql-FirstSetting
 * docker pull mysql/mysql-server:5.6
