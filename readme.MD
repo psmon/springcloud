@@ -21,15 +21,16 @@ Distributed Micro Game Services Using Spring Cloud
 ## Kubernetes
 * kubernetes/{APPNAME}.yaml
 
-## Service Concept
+## Module Concept
 * [ConfigService](config-service) : Centerlized config - [Sample](/library/config-sample) -Sprint Cloud Config
 * [DiscoveryService](eureka-serviceregistry) : Manage distributed applications -Spring Cloud Eureka
-* [AccountAPI](accountapi) : Manage User account and items. -JPA
-* [LobbyAPI](lobbyapi) : Provide services beyond games, including navigating games and entering.
-* [GameAPI](gameapi) : Realtime messages are mainly processed. Services for playing games -Actor Message
-* [FrontWeb](front-web) : Modern web applications to be displayed to users -HTML5
-* [Common](library) : Common Depency (Document or AKKA or ANY)
-
+* GateWayService : preparing - Zulu
+* [AccountAPI](accountapi) : Manage User account or items. - JPA
+* [LobbyAPI](lobbyapi) : Provide services beyond games, including navigating games and entering. - Rest and Websocket
+* [GameAPI](gameapi) : Realtime messages are mainly processed. Services for playing games - Websocket with EventBus
+* [FrontWeb](front-web) : Modern web applications to be displayed to users -HTML5 with React
+* [libary](library) : Simple Depency (Common Lib Just have POJO or Manage Lib Dependency ) - Pure Ols Plain Java Object
+* [Messaging](library/akka.MD) : We use AKKA as a base and Akka Stream connect with other Stream(Kafka,RabbitMQ,ETC)
 
 ## Documents(KOR):
 * WIKI - http://wiki.webnori.com/display/webfr/Spring+Cloud+MicroService
