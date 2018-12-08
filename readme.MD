@@ -23,7 +23,7 @@ Distributed Micro Game Services Using Spring Cloud
 * kubernetes/{APPNAME}.yaml
 
 ## Service Concept
-* [ConfigService](config-service/readme.MD) : Centerlized config - [Sample](config-sample/)
+* [ConfigService](config-service/readme.MD) : Centerlized config - [Sample](/library/config-sample)
 * [DiscoveryService](eureka-serviceregistry/readme.MD) : Con
 * [AccountAPI](accountapi/readme.MD) : DB(JPA) / Rest
 * [LobbyAPI](lobbyapi/readme.MD) : DB(JPA) / Rest
