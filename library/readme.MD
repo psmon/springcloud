@@ -14,6 +14,10 @@
 * Kubernetes in Cloud for Proud
 * Supports various environments through centralized setting - [more detail](../config-service)
 
+## Docker-First Setting
+* pre requered : install docker to your local com
+* docker network create --driver bridge psmonlocal
+
 ## Mysql-FirstSetting
 * docker pull mysql/mysql-server:5.6
 * docker run --net psmonlocal --ip 172.18.1.10 -it -d -p 13306:3306 --name=mysql1 mysql/mysql-server:5.6
