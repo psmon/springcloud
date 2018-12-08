@@ -1,0 +1,38 @@
+---
+message: "hello, spring cloud game api -default"
+
+---
+spring:
+  profiles: local
+  jpa:
+    hibernate.ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:13306/game
+    username: root
+    password: root 
+  
+server:
+  port: 9001
+
+
+message: "hello, spring cloud game api -local"
+
+---
+spring:
+  profiles: dock-local
+
+message: "hello, spring cloud -dock-local"
+
+---
+
+spring:
+  profiles: dev
+
+message: "hello, spring cloud -dev"
+
+---
+
+spring:
+  profiles: prd
+
+message: "hello, spring cloud -prd"

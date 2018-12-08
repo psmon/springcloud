@@ -1,8 +1,13 @@
 # Eureka
 
-doc : http://wiki.webnori.com/display/webfr/Discovery+Service+-+Eureka
+![Alt text](../library/doc-res/spring-eureka-concept.png)
 
-default url :  http://localhost:8761
+This is how the normal Discovery Service works. The reason for this functionality in Micro Service is simple.
+Let's say you want to increase and decrease the API flexibly during operation. The Discovery Service detects this and provides a flexible
+You can continue to provide services to your users, which is useful even in the event of a disability. The node of the provided service suddenly goes down
+Let's do it. The DiscoveryService will detect this and block access.
+
+
 
 ## Docker
 * build : docker build -t psmon.eureka .
@@ -14,5 +19,12 @@ default url :  http://localhost:8761
 * network : docker network create --subnet=172.18.0.0/16 psmonlocal
 * docker network inspect bridge
 
+## Eureka Screen
 
-![enter image description here](http://wiki.webnori.com/download/attachments/16646284/%EC%9C%A0%EB%A0%88%EC%B9%B41.png?api=v2)
+default url :  http://localhost:8761
+
+![enter image description here](../library/doc-res/spring-eureka.png)
+
+
+## Documents(KOR):
+* doc : http://wiki.webnori.com/display/webfr/Discovery+Service+-+Eureka)

@@ -21,6 +21,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.webnori.psmon.cloudspring</groupId>
+			<artifactId>library</artifactId>
+			<version>${app.libray.version}</version>
+		</dependency>
 		<!-- Eureka Server -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

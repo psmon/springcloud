@@ -1,0 +1,45 @@
+---
+message: "hello, spring cloud lobby api -default"
+
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mysql://localhost:13306/lobby
+    username: root
+    password: root   
+  
+  
+server:
+  port: 9000
+
+
+message: "hello, spring cloud lobby api -local"
+---
+spring:
+  profiles: local2
+  
+server:
+  port: 9100
+
+message: "hello, spring cloud lobby api -local2"
+
+---
+spring:
+  profiles: dock-local
+
+message: "hello, spring cloud lobby api -dock-local"
+
+---
+
+spring:
+  profiles: dev
+
+message: "hello, spring cloud lobby api -dev"
+
+---
+
+spring:
+  profiles: prd
+
+message: "hello, spring cloud lobby api -prd"

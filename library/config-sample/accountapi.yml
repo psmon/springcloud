@@ -1,0 +1,69 @@
+---
+message: "hello, spring cloud account api -default"
+
+---
+spring:
+  profiles: local
+  jpa:
+    hibernate.ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:13306/account
+    username: root
+    password: root 
+  
+  
+server:
+  port: 9002
+    
+
+message: "hello, spring cloud account api -local"
+---
+spring:
+  profiles: local2
+  jpa:
+    hibernate.ddl-auto: none
+  datasource:
+    url: jdbc:mysql://localhost:13306/account
+    username: root
+    password: root 
+        
+server:
+  port: 9102
+
+message: "hello, spring cloud account api -local2"
+
+---
+spring:
+  profiles: local3
+  jpa:
+    hibernate.ddl-auto: none
+  datasource:
+    url: jdbc:mysql://localhost:13306/account
+    username: root
+    password: root 
+        
+server:
+  port: 9202
+
+message: "hello, spring cloud account api -local3"
+
+
+---
+spring:
+  profiles: dock-local
+
+message: "hello, spring cloud -local"
+
+---
+
+spring:
+  profiles: dev
+
+message: "hello, spring cloud -dev"
+
+---
+
+spring:
+  profiles: prd
+
+message: "hello, spring cloud -prd"

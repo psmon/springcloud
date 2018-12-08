@@ -19,6 +19,11 @@
 
 
 	<dependencies>
+		<dependency>
+			<groupId>com.webnori.psmon.cloudspring</groupId>
+			<artifactId>library</artifactId>
+			<version>${app.libray.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
