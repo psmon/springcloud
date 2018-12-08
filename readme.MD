@@ -1,14 +1,14 @@
 # Spring Cloud for Distributed applications
 
-##Goal
+## Goal
 Distributed Micro Game Services Using Spring Cloud
 
 ![Alt text](library/doc-res/spring-cloud-arc.png)
 
-# Centeralized Config
-* http://git.webnori.com/projects/SB2/repos/cloudconfig/browse
-
-    If you want to change the path, modify application.peoperties in config-service
+## Recommend Launch Order
+* eureka-serviceregistry
+* config-service
+* any
 
 ## Local Run
 * FullBuild: root>mvn clean install
