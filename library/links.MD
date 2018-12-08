@@ -9,6 +9,7 @@
 * https://www.baeldung.com/dockerizing-spring-boot-application
 
 ## Spring With AKKA:
+* https://www.baeldung.com/akka-with-spring
 * https://doc.akka.io/docs/akka/2.5/cluster-usage.html
 
 ## React with Spring:

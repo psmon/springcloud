@@ -22,8 +22,8 @@
 * docker exec -it mysql1 mysql -uroot -p
 * mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Ik0MeP!ER2urm4JUKxyldEB@RoG';
 * SET PASSWORD FOR 'root'@'localhost' = PASSWORD('root');
-* GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY PASSWORD '@password';
 * GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root';
+* FLUSH PRIVILEGES;
 
 
 ## Refrence Links
