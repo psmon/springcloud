@@ -1,0 +1,48 @@
+---
+message: "hello, spring cloud lobby api -default"
+
+---
+spring:
+  profiles: local
+  
+server:
+  port: 8765
+  
+zuul:
+    prefix: /api
+    routes:
+        account:
+            path: /account/**
+            serviceId: accountapi
+        lobby:
+            path: /lobby/**
+            serviceId: lobbyapi
+        game:
+            path: /game/**
+            serviceId: gameapi            
+
+ribbon:
+  eureka:
+    enabled: true
+
+message: "hello, spring cloud edgeservice -local"
+
+---
+spring:
+  profiles: dock-local
+
+message: "hello, spring cloud lobby api -dock-local"
+
+---
+
+spring:
+  profiles: dev
+
+message: "hello, spring cloud lobby api -dev"
+
+---
+
+spring:
+  profiles: prd
+
+message: "hello, spring cloud lobby api -prd"

@@ -5,9 +5,14 @@ message: "hello, spring cloud lobby api -default"
 spring:
   profiles: local
   datasource:
+    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:13306/lobby
     username: root
-    password: root   
+    password: root
+  jpa:
+    hibernate.ddl-auto: create
+    generate-ddl: true
+    show-sql: true   
   
   
 server:
@@ -18,6 +23,15 @@ message: "hello, spring cloud lobby api -local"
 ---
 spring:
   profiles: local2
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/lobby
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: none
+    generate-ddl: true
+    show-sql: true 
   
 server:
   port: 9100

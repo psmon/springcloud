@@ -1,16 +1,21 @@
 ---
+    
 message: "hello, spring cloud account api -default"
 
+
 ---
+        
 spring:
   profiles: local
-  jpa:
-    hibernate.ddl-auto: create
   datasource:
+    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:13306/account
     username: root
-    password: root 
-  
+    password: root
+  jpa:
+    hibernate.ddl-auto: create
+    generate-ddl: true
+    show-sql: true      
   
 server:
   port: 9002
@@ -20,12 +25,15 @@ message: "hello, spring cloud account api -local"
 ---
 spring:
   profiles: local2
-  jpa:
-    hibernate.ddl-auto: none
   datasource:
+    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:13306/account
     username: root
-    password: root 
+    password: root
+  jpa:
+    hibernate.ddl-auto: none
+    generate-ddl: true
+    show-sql: true 
         
 server:
   port: 9102
@@ -35,12 +43,15 @@ message: "hello, spring cloud account api -local2"
 ---
 spring:
   profiles: local3
-  jpa:
-    hibernate.ddl-auto: none
   datasource:
+    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:13306/account
     username: root
-    password: root 
+    password: root
+  jpa:
+    hibernate.ddl-auto: none
+    generate-ddl: true
+    show-sql: true  
         
 server:
   port: 9202
