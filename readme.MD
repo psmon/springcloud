@@ -15,6 +15,11 @@ Distributed Micro Game Services Using Spring Cloud
 * AppRun: root/{APPPATH}> mvn spring-boot:run -Dspring.profiles.active="local"
 * Recommend : Using Spring Dashboard
 
+Active Spring Profile : local
+![Alt text](library/doc-res/spring-dashboard.png)
+
+
+
 ## Docker Run - Local
 * BuildAndRun : {APPPATH}> dockbuild.cmd
 
