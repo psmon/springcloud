@@ -6,9 +6,12 @@ Distributed Micro Game Services Using Spring Cloud
 ![Alt text](library/doc-res/spring-cloud-arc.png)
 
 ## Recommend Launch Order
-* eureka-serviceregistry
 * config-service
-* any
+* eureka-serviceregistry
+* edge-service
+* your micro service
+    
+The information is automatically updated even if the sequence changes, but the config server must be in the initial state.
 
 ## Local Run
 * FullBuild: root>mvn clean install
