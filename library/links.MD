@@ -15,6 +15,7 @@ This project has been reorganized into a working combination that works well thr
 ## Spring With AKKA:
 * https://www.baeldung.com/akka-with-spring
 * https://doc.akka.io/docs/akka/2.5/cluster-usage.html
+* https://blog.codecentric.de/en/2016/08/cqrs-es-akka/
 
 ## React with Spring:
 * https://github.com/kantega/react-and-spring

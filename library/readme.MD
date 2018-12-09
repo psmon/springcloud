@@ -8,6 +8,11 @@
 ### Bad
 ![goal](doc-res/def-complex.png)
 
+### 
+strategy:
+* Simplified dependencies through spring boot -https://start.spring.io/
+* Do not share entity. DB dependency sharing is a hurdle in micro-services.
+* Share Only POJO in MicroServices. By restoring pure messages, We can play what we want. -CQRS,EventSourcing
 
 ## Deploy Goals
 * Local for Allin-One Service
