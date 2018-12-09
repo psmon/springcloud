@@ -28,7 +28,7 @@ Distributed Micro Game Services Using Spring Cloud
 * [libary](library) : Simple Depency (Common Lib Just have POJO or Manage Lib Dependency ) - Pure Ols Plain Java Object
 * [Messaging](library/akka.MD) : We use AKKA as a base and Akka Stream connect with other Stream(Kafka,RabbitMQ,ETC)
 
-## MocroService Concept
+## MicroService Concept
 * [AccountAPI](accountapi) : Manage User account or items. - JPA
 * [LobbyAPI](lobbyapi) : Provide services beyond games, including navigating games and entering. - Rest and Websocket
 * [GameAPI](gameapi) : Realtime messages are mainly processed. Services for playing games - Websocket with EventBus
