@@ -40,6 +40,7 @@
     <modules>
         <module>config-service</module>
         <module>eureka-serviceregistry</module>
+        <module>edge-service</module>
         <module>library</module>
         <module>front-web</module>
         <module>accountapi</module>

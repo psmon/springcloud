@@ -17,7 +17,13 @@ import java.util.List;
 
 @RefreshScope
 @RestController
+@RequestMapping(path="/ztest")
 public class GreetingController {
+
+    // Zulu with Ribbon for GateWay and Dynamic LoadBlance
+    // this url for 1node  : http://localhost:9000/ztest/message
+    // edge url for loadbalnce : http://localhost:8765/api/lobby/ztest/message
+    // config : http://git.webnori.com/projects/SB2/repos/cloudconfig/browse/edgeservice.yml
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GreetingController.class);
 
@@ -44,11 +50,11 @@ public class GreetingController {
         return myService.message();
     }
 
+    // Ribbon LoadBlance for Call to Other MicroService
     @GetMapping("/organization/{organizationId}/with-employees")
     public List findByOrganizationWithEmployees(@PathVariable("organizationId") Long organizationId) {
         LOGGER.info("Department find: organizationId={}", organizationId);
         List departments = accountClient.findByDepartment(organizationId.toString());
         return departments;
     }
-
 }

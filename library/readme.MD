@@ -20,6 +20,8 @@ strategy:
 * Kubernetes in Cloud for Proud
 * Supports various environments through centralized setting - [more detail](../config-service)
 
+
+
 ## Docker-First Setting
 * pre requered : install docker to your local com
 * docker network create --driver bridge psmonlocal
