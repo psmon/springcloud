@@ -22,6 +22,7 @@ import java.util.List;
 public class LobbyapiApplicationTests {
 	private static final Logger LOGGER = LoggerFactory.getLogger(LobbyapiApplicationTests.class);
 
+	// More Best Sample : https://github.com/velo/feign-mock/blob/master/src/test/java/feign/mock/MockClientTest.java
 	@Autowired
 	AccountClient accountClient;
 
@@ -29,8 +30,10 @@ public class LobbyapiApplicationTests {
 	public void contextLoads() {
 		// TestFor : Client Side Load Balancing with Ribbon
 		// Reqired : Eureka Server / AccountAPI with Eureka
-		List ribbonRuslt= accountClient.findByDepartment("1234");
-		Assert.assertTrue(ribbonRuslt.size()>0);
+
+		Assert.assertEquals("Saved",accountClient.addUser("sang","a@a.com"));
+		String ribbonRuslt= accountClient.findEmailByName("sang");
+		Assert.assertEquals("a@a.com",ribbonRuslt);
 	}
 
 }

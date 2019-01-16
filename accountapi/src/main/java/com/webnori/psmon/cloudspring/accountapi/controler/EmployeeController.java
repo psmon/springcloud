@@ -41,6 +41,11 @@ public class EmployeeController {
         return "Saved";
     }
 
+    @GetMapping("/user/{name}")
+    public String findEmailByName(@PathVariable("name") String name) {
+        return userRepository.findByName(name).getEmail();
+    }
+
     @GetMapping(path="/all")
     public @ResponseBody
     Iterable<User> getAllUsers() {
