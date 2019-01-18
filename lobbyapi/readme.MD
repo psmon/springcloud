@@ -2,7 +2,7 @@
 
 ## LobbyAPI PreView
 
-[](../library/doc-res/lobbyapi-preview.png)
+[](/libary/doc-res/lobbyapi-preview.png)
 
 APILIST:
 - PUT /keepalive/{authToken}

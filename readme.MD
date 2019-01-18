@@ -45,7 +45,7 @@ Active Spring Profile : local
 * [FrontWeb](front-web) : Modern web applications to be displayed to users -HTML5 with React
 
 ## UnitTestTools
-* [LobbyAPI](lobbyapi/src/test) : UnitTestTools
+* [LobbyAPI-TEST](lobbyapi/src/test) : UnitTestTools
 
 ## Fast Data
 * KAFKA Message - at least once delivery + backpressure
