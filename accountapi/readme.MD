@@ -2,7 +2,7 @@
 
 ## LobbyAPI PreView
 
-[](../library/doc-res/accountapi-preview.png)
+![image](../library/doc-res/accountapi-preview.png)
 
 APILIST:
 - GET /account/{authToken}
