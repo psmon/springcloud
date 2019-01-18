@@ -3,9 +3,11 @@
 ## Goal
 Distributed Micro Game Services Using Spring Cloud
 
+-It has tried to implement sample functions that can be applied in practice.
+
 ![Alt text](library/doc-res/spring-cloud-arc.png)
 
-## Recommend Launch Order
+## Launch Order
 * config-service
 * eureka-serviceregistry
 * edge-service
@@ -19,31 +21,36 @@ The information is automatically updated even if the sequence changes, but the c
 * Recommend : Using Spring Dashboard
 
 Active Spring Profile : local
+
 ![Alt text](library/doc-res/spring-dashboard.png)
 
 
-
-## Docker Run - Local
+## Docker Run
 * BuildAndRun : {APPPATH}> dockbuild.cmd
 
 ## Kubernetes
 * kubernetes/{APPNAME}.yaml
 
-## Module Concept
+## Module
 * [ConfigService](config-service) : Centerlized config - [Sample](/library/config-sample) -Sprint Cloud Config
 * [DiscoveryService](eureka-serviceregistry) : Manage distributed applications -Spring Cloud Eureka
 * [EdgeService](edge-service) : Dynamic LoadBlancer - Spring Cloud Zulu
 * [libary](library) : Simple Depency (Common Lib Just have POJO or Manage Lib Dependency ) - Pure Ols Plain Java Object
 * [Messaging](library/akka.MD) : We use AKKA as a base and Akka Stream connect with other Stream(Kafka,RabbitMQ,ETC)
 
-## MicroService Concept
+## MicroService
 * [AccountAPI](accountapi) : Manage User account or items. - JPA
 * [LobbyAPI](lobbyapi) : Provide services beyond games, including navigating games and entering. - Rest and Websocket
-* [GameAPI](gameapi) : Realtime messages are mainly processed. Services for playing games - Websocket with EventBus
+* [GameAPI](gameapi) : Realtime messages are mainly processed. Services for playing games - Websocket with Actor
 * [FrontWeb](front-web) : Modern web applications to be displayed to users -HTML5 with React
 
-## Fast Data Concept
-준비중.....
+## UnitTestTools
+* [LobbyAPI](lobbyapi/src/test) : UnitTestTools
+
+## Fast Data
+* KAFKA Message - at least once delivery + backpressure
+* SPARK - 
+
 
 ## Documents(KOR):
 * WIKI - http://wiki.webnori.com/display/webfr/Spring+Cloud+MicroService
