@@ -1,6 +1,6 @@
 # ACCOUNT API
 
-## LobbyAPI PreView
+## AccountAPI PreView
 
 ![image](../library/doc-res/accountapi-preview.png)
 
