@@ -1,5 +1,10 @@
 # Spring Cloud for Distributed applications
 
+## Lagacy System
+It is part of a legacy service that has been configured and operated very long ago.
+
+![image](library/doc-res/oldsystem.png)
+
 ## Goal
 Distributed Micro Game Services Using Spring Cloud
 
