@@ -59,7 +59,7 @@ Active Spring Profile : local
 * https://www.infoq.com/articles/Reactive-Systems-Akka-Actors-DomainDrivenDesign
 * https://www.slideshare.net/Lightbend/using-the-actor-model-with-domaindriven-design-ddd-in-reactive-systems-with-vaughn-vernon
 * https://mromeh.com/2018/04/27/spring-boot-akka-event-sourcing-starter-part-1/
-* [](https://www.google.co.kr/search?newwindow=1&source=hp&ei=jQNCXIuxHYjhvASs1JmQAQ&q=spring+akka+ddd&btnK=Google+Search&oq=spring+akka+ddd)
+* [more](https://www.google.co.kr/search?newwindow=1&source=hp&ei=jQNCXIuxHYjhvASs1JmQAQ&q=spring+akka+ddd&btnK=Google+Search&oq=spring+akka+ddd)
 ## Documents(KOR):
 * WIKI - http://wiki.webnori.com/display/webfr/Spring+Cloud+MicroService
 
