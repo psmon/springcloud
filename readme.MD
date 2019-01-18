@@ -48,9 +48,7 @@ Active Spring Profile : local
 * [LobbyAPI-TEST](lobbyapi/src/test) : UnitTestTools
 
 ## Fast Data
-* KAFKA Message - at least once delivery + backpressure
-* SPARK - 
-
+* [FastData](fastdata.md)
 
 ## Documents(KOR):
 * WIKI - http://wiki.webnori.com/display/webfr/Spring+Cloud+MicroService
