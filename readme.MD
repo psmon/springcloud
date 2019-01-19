@@ -30,12 +30,6 @@ Active Spring Profile : local
 ![Alt text](library/doc-res/spring-dashboard.png)
 
 
-## Docker Run
-* BuildAndRun : {APPPATH}> dockbuild.cmd
-
-## Kubernetes
-* kubernetes/{APPNAME}.yaml
-
 ## Module
 * [ConfigService](config-service) : Centerlized config - [Sample](/library/config-sample) -Sprint Cloud Config
 * [DiscoveryService](eureka-serviceregistry) : Manage distributed applications -Spring Cloud Eureka
