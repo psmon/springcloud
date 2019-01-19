@@ -3,8 +3,6 @@
 ## LobbyAPI PreView
 
 ![image](../library/doc-res/lobbyapi-preview.png)
-
-APILIST:
 - PUT /keepalive/{authToken}
 - GET /zone/games/{playMode}/{gameType}/{buyin}/{limit}/{seats}?authToken={authToken}
 - GET /cash/tables/{playMode}/{gameType}/{buyin}/{limit}/{seats}?authToken={authToken}

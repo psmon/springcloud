@@ -19,29 +19,11 @@ strategy:
 * DockerCompose in Local and Cloud for Test
 * Kubernetes in Cloud for Proud
 * Supports various environments through centralized setting - [more detail](../config-service)
+* [Docker for this project](docker.md)
 
-
-## Docker-First Local Network Setting for MAC
-    docker>sudo ./networksetting.sh
-
-## Docker Commands
-* docker-compose up --build
-* docker-compose down --rmi local -v --remove-orphans
-
-
-## Mysql-RUN
-    docker/mysql>docker-compose up --build
-
-## KAFKA-RUN
-    docker/mysql>docker-compose up --build
-
-
-## Our APP Run
-* BuildAndRun : {APPPATH}> dockbuild.cmd
-
-
-## Kubernetes
-* kubernetes/{APPNAME}.yaml
+## Api Doc Automation
+![image](doc-res/swagger-ui.png)
+[swagger-2-documentation](https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api)
 
 
 ## Refrence Links

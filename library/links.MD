@@ -39,6 +39,8 @@ This project has been reorganized into a working combination that works well thr
 * https://subicura.com/2017/02/10/docker-guide-for-beginners-create-image-and-deploy.html
 * https://docs.docker.com/engine/reference/commandline/docker/#child-commands
 * http://www.littlebigextra.com/use-spring-profiles-docker-containers/
+* https://blogtechcardosi.wordpress.com/2017/07/18/tutorial-on-microservices-with-kotlin-springboot-and-docker-part-1/
+
 
 ## ETC : 
 * https://www.baeldung.com/spring-boot-actuators
