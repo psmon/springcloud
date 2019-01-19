@@ -29,6 +29,14 @@ Active Spring Profile : local
 
 ![Alt text](library/doc-res/spring-dashboard.png)
 
+## Discovery Server
+
+![image](library/doc-res/eureka-preview.png)
+
+All micro-services are monitored and managed.
+This is useful for how each application recognizes each other to create a strategy for how to dynamically distribute and respond to failures.
+
+
 
 ## Module
 * [ConfigService](config-service) : Centerlized config - [Sample](/library/config-sample) -Sprint Cloud Config
