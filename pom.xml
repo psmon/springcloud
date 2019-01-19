@@ -42,6 +42,7 @@
         <module>eureka-serviceregistry</module>
         <module>edge-service</module>
         <module>library</module>
+        <module>datacenter</module>
         <module>front-web</module>
         <module>accountapi</module>
         <module>lobbyapi</module>
