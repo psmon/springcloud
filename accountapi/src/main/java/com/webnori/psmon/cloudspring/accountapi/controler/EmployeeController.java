@@ -43,7 +43,7 @@ public class EmployeeController {
 
     @GetMapping("/user/{name}")
     public String findEmailByName(@PathVariable("name") String name) {
-        return userRepository.findByName(name).getEmail();
+        return userRepository.findOneByName(name).getEmail();
     }
 
     @GetMapping(path="/all")
