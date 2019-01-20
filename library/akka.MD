@@ -79,7 +79,10 @@ Spring has a web total solution, and AKKA has a total solution for message proce
 
 # Akka Monitoring and Telemetry
 
+![image](doc-res/akka-console.png)
+
 * https://developer.lightbend.com/blog/2017-06-23-mtotm-akka-telemetry/index.html
+* https://developer.lightbend.com/docs/console/current/user-guide/console.html
 
 ## Compare with Other
 * Spring Boot with DDD : preparing....
