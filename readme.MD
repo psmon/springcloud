@@ -51,7 +51,6 @@ This is useful for how each application recognizes each other to create a strate
 * [LobbyAPI](lobbyapi) : Provide services beyond games, including navigating games and entering. - Rest and Websocket
 * [GameAPI](gameapi) : Realtime messages are mainly processed. Services for playing games - Websocket with Actor
 * [FrontWeb](front-web) : Modern web applications to be displayed to users -HTML5 with React
-* [url:port/swagger-ui.html](http://127.0.0.1:9000/swagger-ui.html) : All APIs support APIDOCUMENT automation.
 
 ## UnitTestTools
 A classic CRUD unit test requires a lot of code or is almost useless to reflect business logic. We will prepare various test tools to verify the actual business logic.
@@ -63,9 +62,9 @@ In our service, many messages and data will be generated, and we will acquire it
 
 * [FastData](fastdata.md)
 
-## Akka with DDD in Spring
+## MessageSystem in APP for Akka 
 
-* [Akka](akka.md)
+* [Akka](libary/akka.md)
 
 ## Documents(KOR):
 * WIKI - http://wiki.webnori.com/display/webfr/Spring+Cloud+MicroService

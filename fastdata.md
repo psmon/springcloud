@@ -1,4 +1,4 @@
-# Fast Data or Big Data
+# Fast for Big Data
 
 We will separate our snow data types as follows to implement different message usage strategies.
 - RealTime Message for Service 
@@ -32,6 +32,9 @@ So we will only use Kafka here for analysis or batch purposes.
 - [atleastonce](https://doc.akka.io/docs/akka-stream-kafka/current/atleastonce.html)
 - [transactions](https://doc.akka.io/docs/akka-stream-kafka/current/transactions.html)
 
+### Streams
+
+- AkkaStream
 
 ## SPARK
 

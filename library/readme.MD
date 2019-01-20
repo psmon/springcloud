@@ -23,7 +23,8 @@ strategy:
 
 ## Api Doc Automation
 ![image](doc-res/swagger-ui.png)
-[swagger-2-documentation](https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api)
+* [Swagger-ui.html](http://127.0.0.1:9000/swagger-ui.html) : All APIs support APIDOCUMENT automation.
+* [swagger-2-documentation](https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api)
 
 
 ## Refrence Links
