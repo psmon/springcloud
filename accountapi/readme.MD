@@ -4,7 +4,6 @@
 
 ![image](../library/doc-res/accountapi-preview.png)
 
-APILIST:
 - GET /account/{authToken}
 - PUT /account/playMoney/{authToken}
 - GET /preferences/{preferenceType}/{authToken}

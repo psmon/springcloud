@@ -1,11 +1,17 @@
-## Fast Data
+# Fast Data or Big Data
 
 We will separate our snow data types as follows to implement different message usage strategies.
-- RealTime Message with DomainLogic for React 
+- RealTime Message for Service 
 - BigData for Analysis
 - FastData for Statistics
 
-### KAFKA
+Type of Message
+- Use netty to implement low-level message transfer. (Difficult to design distributed processing directly)
+- Netty implements message transfer using the abstracted RemoteActor. (Built-in using AkkaCluster for dispersion treatment)
+- Send a message using kafka (cluster configuration of the primary keeper is required for distributed processing and external)
+
+
+## KAFKA
 
 Pure Kafka are generally difficult to handle four things:
 * Cluster
@@ -25,3 +31,9 @@ So we will only use Kafka here for analysis or batch purposes.
 ### KAFKA with AKKA
 - [atleastonce](https://doc.akka.io/docs/akka-stream-kafka/current/atleastonce.html)
 - [transactions](https://doc.akka.io/docs/akka-stream-kafka/current/transactions.html)
+
+
+## SPARK
+
+
+## ELastic Search

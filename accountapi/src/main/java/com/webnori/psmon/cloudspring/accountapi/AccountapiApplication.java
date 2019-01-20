@@ -31,6 +31,8 @@ public class AccountapiApplication {
 
 		ActorSystem system = context.getBean(ActorSystem.class);
 
+
+		// Create Actor in APP
 		ActorRef greeter = system.actorOf(SpringExtension.SPRING_EXTENSION_PROVIDER.get(system)
 				.props("greetingActor"), "greeter");
 

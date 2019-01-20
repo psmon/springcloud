@@ -46,15 +46,8 @@ Client
 
 We can call Rest, which is easily load balanced with a known application name.
 
-## Docker
-* build : docker build -t psmon.eureka .
-* run : docker run --net psmonlocal --ip 172.18.1.2 -it -d -p 18761:8761 -e "SPRING_PROFILES_ACTIVE=dock-local" --name eureka1 psmon.eureka
-* rerun : docker restart eureka1
-* stop : docker stop eureka1
-
-## NetWork
-* network : docker network create --subnet=172.18.0.0/16 psmonlocal
-* docker network inspect bridge
+## Etc - Discovery for AKKA
+- https://developer.lightbend.com/docs/akka-management/current/discovery/index.html
 
 
 

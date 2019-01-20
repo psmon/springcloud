@@ -11,7 +11,7 @@ src:
 
 How to send a message to an actor from another remote application
 
-    ActorSelection remoteGreeter = system.actorSelection("akka.tcp://akka-accountapi@127.0.0.1:9999/user/greeter");
+    ActorSelection remoteGreeter = system.actorSelection("akka.tcp://accountapi@127.0.0.1:2552/user/greeter");
     remoteGreeter.tell(new Greet("This is Remote Message"),ActorRef.noSender());
 
 Akka Documents Summary:

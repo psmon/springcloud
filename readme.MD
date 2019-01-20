@@ -65,12 +65,7 @@ In our service, many messages and data will be generated, and we will acquire it
 
 ## Akka with DDD in Spring
 
-Spring has a web total solution, and AKKA has a total solution for message processing. It may be a difficult attempt to harmonize the two things, but it will be a good experience and we will prepare some samples.
-
-* [Akka-Actors-DomainDrivenDesign](https://www.infoq.com/articles/Reactive-Systems-Akka-Actors-DomainDrivenDesign)
-* [Akka-Actors-DomainDrivenDesign](https://www.slideshare.net/Lightbend/using-the-actor-model-with-domaindriven-design-ddd-in-reactive-systems-with-vaughn-vernon)
-* [SpringAkkaEventSourcing](https://mromeh.com/2018/04/27/spring-boot-akka-event-sourcing-starter-part-1/)
-* [more](https://www.google.co.kr/search?newwindow=1&source=hp&ei=jQNCXIuxHYjhvASs1JmQAQ&q=spring+akka+ddd&btnK=Google+Search&oq=spring+akka+ddd)
+* [Akka](akka.md)
 
 ## Documents(KOR):
 * WIKI - http://wiki.webnori.com/display/webfr/Spring+Cloud+MicroService

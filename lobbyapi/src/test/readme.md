@@ -60,7 +60,7 @@ link:
     
     }
 
-## UnitTest Sample
+## FeignClient UnitTest Sample
     @Before
     public void setup() {
         GameInfoClientBuilder feignClientBuilder = new GameInfoClientBuilder();
@@ -78,6 +78,14 @@ link:
         
         accountApiClient.findEmailByName(".....");
     }
+
+## FeignClient UniTest Result
+
+Our unit test scenarios are likely to fail verification. FeignClient is easy to call and validate actual service endpoints, so there is high confidence in coverage.
+
+    feign.FeignException: status 500 reading AccountClient#findEmailByName(String); content:
+    {"timestamp":"2019-01-20T12:19:54.932+0000","status":500,"error":"Internal Server Error","message":"query did not return a unique result: 2; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 2","path":"/demo/user/sang"}
+
 
 
 #### Todo:Next

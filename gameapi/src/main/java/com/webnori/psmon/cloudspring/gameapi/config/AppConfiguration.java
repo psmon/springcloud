@@ -17,7 +17,7 @@ public class AppConfiguration {
 
     @Bean
     public ActorSystem actorSystem() {
-        ActorSystem system = ActorSystem.create("akka-gameapi");
+        ActorSystem system = ActorSystem.create("gameapi");
         SpringExtension.SPRING_EXTENSION_PROVIDER.get(system)
                 .initialize(applicationContext);
         return system;
