@@ -77,6 +77,10 @@ Spring has a web total solution, and AKKA has a total solution for message proce
 * [AkkaEventSourcing](https://mromeh.com/2018/04/27/spring-boot-akka-event-sourcing-starter-part-1/)
 * [more...](https://www.google.co.kr/search?newwindow=1&source=hp&ei=jQNCXIuxHYjhvASs1JmQAQ&q=spring+akka+ddd&btnK=Google+Search&oq=spring+akka+ddd)
 
+# Akka Monitoring and Telemetry
+
+* https://developer.lightbend.com/blog/2017-06-23-mtotm-akka-telemetry/index.html
+
 ## Compare with Other
 * Spring Boot with DDD : preparing....
 * KAFKA Stream with DDD : preparing....
