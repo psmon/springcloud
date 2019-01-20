@@ -3,12 +3,18 @@
 ## Legacy System
 It is part of a legacy service that has been configured and operated very long ago.
 
+* single point of failure/bottleneck
+
+
 ![image](library/doc-res/oldsystem.png)
 
 ## Goal
 Distributed Micro Game Services Using Spring Cloud
+It has tried to implement sample functions that can be applied in practice.
 
--It has tried to implement sample functions that can be applied in practice.
+* Peer-to-peer: New nodes can contact existing peers, be notified about other peers, and fully integrate themselves into the network without any configuration changes.
+* No single point of failure/bottleneck: multiple nodes are able to service requests, increasing throughput and fault-tolerance.
+
 
 ![Alt text](library/doc-res/spring-cloud-arc.png)
 
