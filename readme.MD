@@ -1,14 +1,15 @@
 # Spring Cloud for Distributed applications
 
-## Legacy System
+## The hard journey of legacy systems
 It is part of a legacy service that has been configured and operated very long ago.
 
 * single point of failure/bottleneck
+* Fragmentation of different technologies
 
 
 ![image](library/doc-res/oldsystem.png)
 
-## Goal
+## Goals for Walking the Flower Path
 Distributed Micro Game Services Using Spring Cloud
 It has tried to implement sample functions that can be applied in practice.
 
@@ -49,7 +50,6 @@ This is useful for how each application recognizes each other to create a strate
 * [DiscoveryService](eureka-serviceregistry) : Manage distributed applications -Spring Cloud Eureka
 * [EdgeService](edge-service) : Dynamic LoadBlancer - Spring Cloud Zulu
 * [libary](library) : Simple Depency(Only Shared POJO) and Third party Tools
-* [Messaging](library/akka.MD) : We use AKKA as a base and Akka Stream connect with other Stream(Kafka,RabbitMQ,ETC)
 
 ## MicroService
 * [DataCenter](datacenter) : Distributed data aggregation, centralized service that can mapreduce the data of a distributed application
@@ -70,7 +70,10 @@ In our service, many messages and data will be generated, and we will acquire it
 
 ## MessageSystem in APP for Akka 
 
-* [Akka](libary/akka.md)
+We use AKKA as a base and Akka Stream connect with other Stream(Kafka,RabbitMQ,ETC)
+One of the characteristics of AkkaSystem is that we can embed message systems in our services.
+
+* [Akka](library/akka.MD)
 
 ## Documents(KOR):
 * WIKI - http://wiki.webnori.com/display/webfr/Spring+Cloud+MicroService
