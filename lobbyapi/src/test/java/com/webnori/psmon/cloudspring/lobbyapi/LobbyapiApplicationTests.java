@@ -36,4 +36,12 @@ public class LobbyapiApplicationTests {
 		Assert.assertEquals("a@a.com",ribbonRuslt);
 	}
 
+	@Test
+	public void testGet() {
+		//Zulu http://127.0.0.1:8765/api/account/demo/department/1
+		List test = accountClient.findByDepartment("1");
+		LOGGER.info("====" +test);
+
+	}
+
 }

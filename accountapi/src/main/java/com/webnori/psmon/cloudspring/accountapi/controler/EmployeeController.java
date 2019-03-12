@@ -5,6 +5,7 @@ import com.webnori.psmon.cloudspring.accountapi.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -18,12 +19,16 @@ public class EmployeeController {
     @Autowired
     private UserRepository userRepository;
 
+    @Value("${server.port}")
+    private String serverPort;
+
     @GetMapping("/department/{departmentId}")
     public List findByDepartment(@PathVariable("departmentId") Long departmentId) {
         LOGGER.info("Employee find: departmentId={}", departmentId);
         List<String>    dummyList = new ArrayList<>();
         dummyList.add("t1");
         dummyList.add("t2");
+        dummyList.add(serverPort);
         dummyList.add(departmentId.toString());
         return dummyList;
     }
