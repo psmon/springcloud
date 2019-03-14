@@ -42,6 +42,7 @@
         <module>config-service</module>
         <module>eureka-serviceregistry</module>
         <module>edge-service</module>
+        <module>akka-cluster</module>
         <module>library</module>
         <module>datacenter</module>
         <module>front-web</module>
