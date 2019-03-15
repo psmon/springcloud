@@ -35,14 +35,10 @@ public class ClusterClientTest {
     public static void down() {
         clusterSystem2.terminate();
         clusterSystem1.terminate();
-
     }
 
     @Test
     public void test() throws InterruptedException {
         Thread.sleep(1000);
-
     }
-
-
 }
