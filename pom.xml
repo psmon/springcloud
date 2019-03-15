@@ -20,8 +20,8 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.M3</spring-cloud.version>
         <swagger2.version>2.9.2</swagger2.version>
-        <akka.version>2.5.16</akka.version>
-        <scala.binary_version>2.11</scala.binary_version>
+        <akka.version>2.5.21</akka.version>
+        <scala.binary_version>2.12</scala.binary_version>
         <app.libray.version>0.1.0-SNAPSHOT</app.libray.version>
     </properties>
 
