@@ -18,6 +18,8 @@ public class FactorialFrontend extends AbstractActor {
     ActorRef backend = getContext().actorOf(FromConfig.getInstance().props(),
             "factorialBackendRouter");
 
+    ActorRef probe;
+
     public FactorialFrontend(int upToN, boolean repeat) {
         this.upToN = upToN;
         this.repeat = repeat;
@@ -25,20 +27,31 @@ public class FactorialFrontend extends AbstractActor {
 
     @Override
     public void preStart() {
-        sendJobs();
+        //sendJobs();
         getContext().setReceiveTimeout(Duration.create(10, TimeUnit.SECONDS));
     }
 
     @Override
     public Receive createReceive() {
         return receiveBuilder()
+                .match(FactorialRequest.class, request->{
+                    int upToN = request.upToN;
+                    log.info("Starting batch of factorials up to [{}]", upToN);
+                    for (Integer n = 1; n <= upToN; n++) {
+                        backend.tell(n, self());
+                    }
+                    probe = getSender();
+                })
                 .match(FactorialResult.class, result -> {
                     if (result.n == upToN) {
-                        log.info("{}! = {}", result.n, result.factorial);
+                        log.info("FactorialResult {}! = {}", result.n, result.factorial);
                         if (repeat)
                             sendJobs();
                         else
                             getContext().stop(self());
+
+                        //forward to probe
+                        probe.tell(result,ActorRef.noSender());
                     }
                 })
                 .match(ReceiveTimeout.class, message -> {
