@@ -19,21 +19,25 @@ public class AppConfiguration {
     @Autowired
     private ApplicationContext applicationContext;
 
-    @Value("${yakka.hostname}")
+    @Value("${akka.hostname}")
     private String hostname;
 
-    @Value("${yakka.role}")
+    @Value("${akka.role}")
     private String role;
 
-    @Value("${yakka.port}")
+    @Value("${akka.port}")
     private String port;
+
+    @Value("${akka.seed-nodes}")
+    private String seedNodes;
 
     @Bean
     public ActorSystem actorSystem() {
 
         String minConfig = String.format("akka.remote.netty.tcp.hostname =%s \n " +
                 "akka.remote.netty.tcp.port = %s \n" +
-                "akka.cluster.roles = [%s] \n " , hostname,port,role);
+                "akka.cluster.roles = [%s] \n " +
+                "akka.cluster.seed-nodes = %s \n ", hostname,port,role,seedNodes);
 
         final Config config = ConfigFactory.parseString(
                 minConfig).withFallback(
