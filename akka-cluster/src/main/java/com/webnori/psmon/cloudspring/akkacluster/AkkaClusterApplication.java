@@ -3,6 +3,8 @@ package com.webnori.psmon.cloudspring.akkacluster;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 import com.webnori.psmon.cloudspring.akkacluster.actor.ClusterListener;
 import com.webnori.psmon.cloudspring.akkacluster.config.SpringExtension;
 import org.springframework.boot.SpringApplication;
