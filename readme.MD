@@ -30,7 +30,20 @@ The information is automatically updated even if the sequence changes, but the c
 * AppRun: root/{APPPATH}> mvn spring-boot:run -Dspring.profiles.active="local"
 * Recommend : Using Spring Dashboard
 
-Active Spring Profile : local
+Profile for Local:
+- EurekaServiceregistry: local
+- ConfigService : local
+- AkkaCluster(Seed) : local
+- DataCenter : local-h2
+- AccountApi1 : local-h2
+- AccountApi2 : local-h3
+- LobbyApi : local
+
+Deployment goal:
+- Run all locally without a docker
+- Run locally through integration of the dockers
+- Drive the docker directly to AWS
+- Deliver to BareMetal without AWS
 
 ![Alt text](library/doc-res/spring-dashboard.png)
 
@@ -42,16 +55,15 @@ All micro-services are monitored and managed.
 This is useful for how each application recognizes each other to create a strategy for how to dynamically distribute and respond to failures.
 
 
-
 ## Module
 * [ConfigService](config-service) : Centerlized config - [Sample](/library/config-sample) -Sprint Cloud Config
 * [DiscoveryService](eureka-serviceregistry) : Manage distributed applications -Spring Cloud Eureka
 * [EdgeService](edge-service) : Dynamic LoadBlancer - Spring Cloud Zulu
 * [libary](library) : Simple Depency(Only Shared POJO) and Third party Tools
 
-## MicroService
+## MicroService Sample - There is no domain goal here, but you can use the sample code to add new domain ideas and create services.
 * [DataCenter](datacenter) : Distributed data aggregation, centralized service that can mapreduce the data of a distributed application
-* [AccountAPI](accountapi) : Manage User account or items. - JPA
+* [AccountAPI](accountapi) : Manage User account or items. - JPA or Native Query
 * [LobbyAPI](lobbyapi) : Provide services beyond games, including navigating games and entering. - Rest and Websocket
 * [GameAPI](gameapi) : Realtime messages are mainly processed. Services for playing games - Websocket with Actor
 * [FrontWeb](front-web) : Modern web applications to be displayed to users -HTML5 with React
