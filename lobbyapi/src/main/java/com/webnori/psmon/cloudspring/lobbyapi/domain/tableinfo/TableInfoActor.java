@@ -10,6 +10,7 @@ import akka.routing.FromConfig;
 import com.webnori.psmon.cloudspring.library.common.message.TableInfo.TableCMD;
 import com.webnori.psmon.cloudspring.library.common.message.TableInfo.TableInfo;
 import com.webnori.psmon.cloudspring.library.common.message.TableInfo.TableInfoList;
+import org.jboss.netty.handler.codec.socks.SocksMessage;
 import scala.concurrent.duration.Duration;
 
 import java.util.Collections;
@@ -58,6 +59,10 @@ public class TableInfoActor extends AbstractActor {
                 .match(ReceiveTimeout.class, message -> {
                     log.info("=== Timer");
                     sendRefreshTable(TableCMD.TableCMDType.SYNC_FIRST);
+                })
+                .match(TableCMD.class, cmd -> {
+                    if(cmd.cmdType == TableCMD.TableCMDType.SYNC_FIRST)
+                    sender().tell(tableInfos,null);
                 })
                 .matchAny(o -> log.info("received unknown message"))
                 .build();
