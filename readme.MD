@@ -4,8 +4,10 @@
 ## Goals
 - Distributed Micro Game(or Other) Services Using Spring Cloud
 
-In the domain-driven design, the domain is first built and the infrastructure is next. However, we are aiming to build a frame that can contain various microdomains.
+    In the domain-driven design, the domain is first built and the infrastructure is next. However, 
+    we are aiming to build a frame that can contain various microdomains.
 
+Concept:
 * Service Discovery : Eureka
 * Gateway Service : Zulu
 * Minimal monitoring : 
