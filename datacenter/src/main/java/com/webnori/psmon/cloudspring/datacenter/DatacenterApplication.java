@@ -28,7 +28,7 @@ public class DatacenterApplication {
 
 		TableMemoryRepository tableMemoryRepository = new TableMemoryRepository();
 		tableMemoryRepository.createDummyData();
-		ActorRef tableInfoActor = system.actorOf(TableInfoActor.props(tableMemoryRepository),"dcTableSyncRouter");
+		ActorRef tableInfoActor = system.actorOf(TableInfoActor.props(tableMemoryRepository),"dcTableSync");
 
 	}
 

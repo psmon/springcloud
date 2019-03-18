@@ -33,7 +33,7 @@ public class LobbyapiApplication {
 		Cluster.get(system).registerOnMemberUp(new Runnable() {
 			@Override
 			public void run() {
-				system.actorOf(TableInfoActor.props(),"tableSync");
+				system.actorOf(TableInfoActor.props(),"lobbyTableSync");
 			}
 		});
 	}

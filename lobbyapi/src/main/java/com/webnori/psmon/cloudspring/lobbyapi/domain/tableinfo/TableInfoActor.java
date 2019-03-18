@@ -40,8 +40,12 @@ public class TableInfoActor extends AbstractActor {
     @Override
     public void preStart() {
         // first requestData
-        dataCenter.tell(new TableCMD(TableCMD.TableCMDType.SYNC_FIRST),null );
+        sendRefreshTable(TableCMD.TableCMDType.SYNC_FIRST);
         getContext().setReceiveTimeout(Duration.create(10, TimeUnit.SECONDS));
+    }
+
+    private void sendRefreshTable(TableCMD.TableCMDType cmdType) {
+        dataCenter.tell(new TableCMD(cmdType),getSelf() );
     }
 
     @Override
@@ -53,7 +57,7 @@ public class TableInfoActor extends AbstractActor {
                 })
                 .match(ReceiveTimeout.class, message -> {
                     log.info("=== Timer");
-                    dataCenter.tell(new TableCMD(TableCMD.TableCMDType.SYNC_FIRST),null );
+                    sendRefreshTable(TableCMD.TableCMDType.SYNC_FIRST);
                 })
                 .matchAny(o -> log.info("received unknown message"))
                 .build();
