@@ -1,21 +1,17 @@
 # Spring Cloud for Distributed applications
 
-## The hard journey of legacy systems
-It is part of a legacy service that has been configured and operated very long ago.
 
-* single point of failure/bottleneck
-* Fragmentation of different technologies
+## Goals
+- Distributed Micro Game(or Other) Services Using Spring Cloud
 
+In the domain-driven design, the domain is first built and the infrastructure is next. However, we are aiming to build a frame that can contain various microdomains.
 
-![image](library/doc-res/oldsystem.png)
-
-## Goals for only Walking the Flower Path : [Movie](https://youtu.be/2O6dRaBbFoo)
-Distributed Micro Game Services Using Spring Cloud
-It has tried to implement sample functions that can be applied in practice.
-
+* Service Discovery : Eureka
+* Gateway Service : Zulu
+* Minimal monitoring : 
 * Peer-to-peer: New nodes can contact existing peers, be notified about other peers, and fully integrate themselves into the network without any configuration changes.
 * No single point of failure/bottleneck: multiple nodes are able to service requests, increasing throughput and fault-tolerance.
-
+* Connect with other streams : alpakka
 
 ![Alt text](library/doc-res/spring-cloud-arc.png)
 
