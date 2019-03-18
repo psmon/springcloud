@@ -34,7 +34,7 @@ public class AppConfiguration {
     @Bean
     public ActorSystem actorSystem() {
 
-        String minConfig = String.format("akka.remote.netty.tcp.hostname =%s \n " +
+        String minConfig = String.format("akka.remote.netty.tcp.hostname = \"%s\" \n " +
                 "akka.remote.netty.tcp.port = %s \n" +
                 "akka.cluster.roles = [%s] \n " +
                 "akka.cluster.seed-nodes = %s \n ", hostname,port,role,seedNodes);

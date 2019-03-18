@@ -17,7 +17,7 @@ public class AppConfiguration {
 
     @Bean
     public ActorSystem actorSystem() {
-        ActorSystem system = ActorSystem.create("accountapi");
+        ActorSystem system = ActorSystem.create("ClusterSystem");
         SpringExtension.SPRING_EXTENSION_PROVIDER.get(system)
                 .initialize(applicationContext);
         return system;

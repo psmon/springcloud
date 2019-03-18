@@ -10,7 +10,7 @@
 Concept:
 * Service Discovery : Eureka
 * Gateway Service : Zulu
-* Minimal monitoring : 
+* Light Monitoring : Eureka + actuator
 * Peer-to-peer: New nodes can contact existing peers, be notified about other peers, and fully integrate themselves into the network without any configuration changes.
 * No single point of failure/bottleneck: multiple nodes are able to service requests, increasing throughput and fault-tolerance.
 * Connect with other streams : alpakka
@@ -30,14 +30,18 @@ The information is automatically updated even if the sequence changes, but the c
 * AppRun: root/{APPPATH}> mvn spring-boot:run -Dspring.profiles.active="local"
 * Recommend : Using Spring Dashboard
 
-Profile for Local:
-- EurekaServiceregistry: local
-- ConfigService : local
-- AkkaCluster(Seed) : local
-- DataCenter : local-h2
-- AccountApi1 : local-h2
-- AccountApi2 : local-h3
-- LobbyApi : local
+Profile for Local(Test for Cluster):
+- EurekaServiceregistry(8765): local
+- ConfigService(8888) : local
+- AkkaCluster(6000-Seed) : local
+- DataCenter(10000) : local-h2
+- AccountApi1(9002) : local-h2
+- AccountApi2(9102) : local-h3
+- LobbyApi1(9200) : local-h2
+- LobbyApi2(9201) : local-h3
+
+    The same application can manage the same port when using a docker
+
 
 Deployment goal:
 - Run all locally without a docker

@@ -7,6 +7,7 @@ import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import com.webnori.psmon.cloudspring.akkacluster.actor.ClusterListener;
 import com.webnori.psmon.cloudspring.akkacluster.config.SpringExtension;
+import com.webnori.psmon.cloudspring.library.akkatools.SimpleClusterListner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -22,7 +23,7 @@ public class AkkaClusterApplication {
 		ActorSystem system = context.getBean(ActorSystem.class);
 
 		// Create an actor that handles cluster domain events
-		system.actorOf(Props.create(ClusterListener.class), "clusterListener");
+		system.actorOf(Props.create(SimpleClusterListner.class), "clusterListener");
 
 	}
 }
