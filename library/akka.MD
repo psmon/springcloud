@@ -67,6 +67,13 @@ related src:
         }};
     }
 
+## Cluster
+
+![image](doc-res/akka-cluster.png)
+
+related src:
+- [ClusterClientTest](../akka-cluster/src/test/java/com/webnori/psmon/cloudspring/akkacluster/actor/ClusterClientTest.java)
+
 
 
 # Akka with DDD
