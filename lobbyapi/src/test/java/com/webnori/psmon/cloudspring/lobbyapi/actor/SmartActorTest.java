@@ -55,9 +55,7 @@ public class SmartActorTest {
                 slowActor2.tell(i, ActorRef.noSender());
                 slowActor3.tell(i, ActorRef.noSender());
             }
-
             Thread.sleep(10000);
-
         }};
     }
 }

@@ -22,7 +22,7 @@ public class SmartActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(Integer.class, tableList -> {
+                .match(Integer.class, number -> {
                     Thread.sleep(500);  // delay for test
                     log.info(String.format("===== process msg:%s", name));
                 })
