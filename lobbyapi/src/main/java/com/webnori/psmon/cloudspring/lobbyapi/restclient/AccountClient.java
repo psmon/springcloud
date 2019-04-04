@@ -15,7 +15,6 @@ public interface AccountClient {
     @GetMapping("demo/add")
     String addUser(@RequestParam String name, @RequestParam String email);
 
-
     @GetMapping("demo/user/{name}")
     String findEmailByName(@PathVariable String name);
 

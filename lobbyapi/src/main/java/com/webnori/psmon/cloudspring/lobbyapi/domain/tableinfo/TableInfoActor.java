@@ -10,7 +10,6 @@ import akka.routing.FromConfig;
 import com.webnori.psmon.cloudspring.library.common.message.TableInfo.TableCMD;
 import com.webnori.psmon.cloudspring.library.common.message.TableInfo.TableInfo;
 import com.webnori.psmon.cloudspring.library.common.message.TableInfo.TableInfoList;
-import org.jboss.netty.handler.codec.socks.SocksMessage;
 import scala.concurrent.duration.Duration;
 
 import java.util.Collections;
@@ -46,7 +45,7 @@ public class TableInfoActor extends AbstractActor {
     }
 
     private void sendRefreshTable(TableCMD.TableCMDType cmdType) {
-        dataCenter.tell(new TableCMD(cmdType),getSelf() );
+        dataCenter.tell(new TableCMD(cmdType), getSelf());
     }
 
     @Override
@@ -54,15 +53,15 @@ public class TableInfoActor extends AbstractActor {
         return receiveBuilder()
                 .match(TableInfoList.class, tableList -> {
                     tableInfos = tableList.getValues();
-                    log.info(String.format("===== first Table sync, count:%d",tableInfos.size()));
+                    log.info(String.format("===== first Table sync, count:%d", tableInfos.size()));
                 })
                 .match(ReceiveTimeout.class, message -> {
                     log.info("=== Timer");
                     sendRefreshTable(TableCMD.TableCMDType.SYNC_FIRST);
                 })
                 .match(TableCMD.class, cmd -> {
-                    if(cmd.cmdType == TableCMD.TableCMDType.SYNC_FIRST)
-                    sender().tell(tableInfos,null);
+                    if (cmd.cmdType == TableCMD.TableCMDType.SYNC_FIRST)
+                        sender().tell(tableInfos, null);
                 })
                 .matchAny(o -> log.info("received unknown message"))
                 .build();
