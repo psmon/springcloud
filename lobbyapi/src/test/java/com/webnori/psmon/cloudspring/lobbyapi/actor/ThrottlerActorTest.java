@@ -11,6 +11,7 @@ import com.webnori.psmon.cloudspring.lobbyapi.config.AppConfiguration;
 import com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.CheckCnt;
 import com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.IncreseCnt;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -41,11 +42,11 @@ public class ThrottlerActorTest {
     @Test
     public void testIt() throws Exception {
         // given
-        int cntPerSec = 5;
+        int cntPerSec = 10;
         ActorRef throttler = system.actorOf(com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.ThrottlerActor.props(cntPerSec, materializer), "throttler");
 
         // when
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             while (true) {
                 int remainCnt = (int) AkkaUtil.AskToActor(throttler, new CheckCnt(), 5);
                 if (remainCnt < cntPerSec) {
@@ -55,5 +56,17 @@ public class ThrottlerActorTest {
             }
             throttler.tell(new IncreseCnt(), null);
         }
+
+        // then
+        int remainCnt = -1;
+        while (true) {
+            remainCnt = (int) AkkaUtil.AskToActor(throttler, new CheckCnt(), 5);
+            if (remainCnt == 0) {
+                break;
+            }
+            Thread.sleep(500);
+        }
+        Assert.assertEquals(0,remainCnt);
+
     }
 }
