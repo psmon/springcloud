@@ -12,89 +12,50 @@ import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
 
 import java.time.Duration;
-import java.time.Instant;
 
-class DecreseCnt {
+class IncBucket {
 }
 
 public class ThrottlerActor extends AbstractActor {
-
+    private final Materializer materializer;
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), this);
-    private ActorRef throttler;
-    private ActorRef slowThrottler;
-    Materializer materializer;
-    private int countInSec = 0;
-    private int secLimit;
-    private Boolean slowMode = false;
-    private Instant lastCall;
-    private int releseBucketSec = 3;
+    private final ActorRef releaseThrottler;
+    private int bucketSize;
+    private int totalCnt;
 
-    static public Props props(int secLimit, Materializer materializer) {
-        return Props.create(ThrottlerActor.class, () -> new ThrottlerActor(secLimit, materializer));
+    static public Props props(int bucketSize, int releaseBucketSppedSec, Materializer materializer) {
+        return Props.create(ThrottlerActor.class, () -> new ThrottlerActor(bucketSize, releaseBucketSppedSec, materializer));
     }
 
-    public ThrottlerActor(int secLimit, Materializer materializer) {
+    public ThrottlerActor(int bucketSize, int releaseBucketSppedSec, Materializer materializer) {
         this.materializer = materializer;
-        this.secLimit = secLimit;
-        throttler = Source.actorRef(10000, OverflowStrategy.dropNew())
-                .throttle(secLimit, Duration.ofSeconds(1))
-                .to(Sink.actorRef(getSelf(), NotUsed.getInstance()))
-                .run(materializer);
-        slowThrottler = Source.actorRef(10000, OverflowStrategy.dropNew())
-                .throttle(1, Duration.ofSeconds(1))
-                .to(Sink.actorRef(getSelf(), NotUsed.getInstance()))
-                .run(materializer);
-    }
+        this.bucketSize = bucketSize;
+        totalCnt = 0;
 
-    private void switchSpeed(){
-        if(lastCall!=null){
-            if(slowMode){
-                Duration timeElapsed = Duration.between(lastCall, Instant.now());
-                if(timeElapsed.getSeconds() > secLimit*releseBucketSec){
-                    slowMode=false;
-                }
-            }else{
-                if (countInSec >= secLimit) {
-                    slowMode = true;
-                }
-            }
-        }
+        releaseThrottler = Source.actorRef(10000, OverflowStrategy.dropNew())
+                .throttle(releaseBucketSppedSec, Duration.ofSeconds(1))
+                .to(Sink.actorRef(getSelf(), NotUsed.getInstance()))
+                .run(materializer);
     }
 
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match(IncreseCnt.class, obj -> {
-                    countInSec++;
-                    switchSpeed();
-
-                    ActorRef runActor = null;
-
-                    if (slowMode)
-                        runActor = slowThrottler;
-                    else
-                        runActor = throttler;
-
-                    lastCall = Instant.now();
-                    runActor.tell(new DecreseCnt(), getSelf());
-                    log.info("SafeCall-SlowMode:{} remain cnt {}",slowMode ,countInSec);
+                .match(DesBucket.class, obj -> {
+                    bucketSize--;
+                    totalCnt++;
+                    releaseThrottler.tell(new IncBucket(), getSelf());
+                    log.info("DesBucket:{} Procssed:{} ", bucketSize, totalCnt);
                 })
-                .match(DecreseCnt.class, obj -> {
-                    countInSec--;
+                .match(IncBucket.class, obj -> {
+                    bucketSize++;
+                    log.info("IncBucket:{} Procssed:{} ", bucketSize, totalCnt);
                 })
                 .match(AvableCall.class, obj -> {
                     Boolean bAvable = false;
-                    if (slowMode) {
-                        if (countInSec == 0)
-                            bAvable = true;
-                    } else {
-                        if (countInSec < secLimit)
-                            bAvable = true;
-                    }
+                    if (0 < bucketSize)
+                        bAvable = true;
                     getSender().tell(bAvable, null);
-                })
-                .match(CheckCnt.class, number -> {
-                    getSender().tell(countInSec, null);
                 })
                 .matchAny(o -> log.info("received unknown message"))
                 .build();
