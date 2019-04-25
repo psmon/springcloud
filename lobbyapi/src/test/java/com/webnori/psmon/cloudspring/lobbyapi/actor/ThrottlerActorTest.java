@@ -8,9 +8,9 @@ import akka.testkit.javadsl.TestKit;
 import com.typesafe.config.ConfigFactory;
 import com.webnori.psmon.cloudspring.library.akkatools.AkkaUtil;
 import com.webnori.psmon.cloudspring.lobbyapi.config.AppConfiguration;
-import com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.AvableCall;
 import com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.CheckCnt;
 import com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.IncreseCnt;
+import com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.ThrottlerActor;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -40,36 +40,17 @@ public class ThrottlerActorTest {
         system = null;
     }
 
-    private void waifForAvable(ActorRef throttler) throws Exception {
+    private void waitForUnderRemainCnt(ActorRef throttler,int cntPerSec) throws Exception {
         while (true) {
-            Boolean avableCall = (Boolean) AkkaUtil.AskToActor(throttler, new AvableCall(), 5);
-            if (avableCall) {
+            int remainCnt = (int) AkkaUtil.AskToActor(throttler, new CheckCnt(), 5);
+            if (remainCnt < cntPerSec) {
                 break;
             }
             Thread.sleep(500);
         }
     }
 
-    @Test
-    public void testIt() throws Exception {
-        // given
-        int cntPerSec = 10;
-        ActorRef throttler = system.actorOf(com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.ThrottlerActor.props(cntPerSec, materializer), "throttler");
-
-        // when
-        for (int i = 0; i < 13; i++) {
-            waifForAvable(throttler);
-            throttler.tell(new IncreseCnt(), null);
-        }
-
-        Thread.sleep(1000*9);
-
-        for (int i = 0; i < 10; i++) {
-            waifForAvable(throttler);
-            throttler.tell(new IncreseCnt(), null);
-        }
-
-        // then
+    private int wairForAllCompleted(ActorRef throttler) throws Exception {
         int remainCnt = -1;
         while (true) {
             remainCnt = (int) AkkaUtil.AskToActor(throttler, new CheckCnt(), 5);
@@ -78,7 +59,24 @@ public class ThrottlerActorTest {
             }
             Thread.sleep(500);
         }
-        Assert.assertEquals(0,remainCnt);
+        return remainCnt;
+    }
 
+    @Test
+    public void testIt() throws Exception {
+        // given
+        int cntPerSec = 10; //유입량과 상관없이 초당 10번이 처리되도록 밸브셋팅
+        ActorRef throttler = system.actorOf(ThrottlerActor.props(cntPerSec, materializer), "throttler");
+
+        // 동기적 API 100번 호출 시나리오
+        for (int i = 0; i < 100; i++) {
+            waitForUnderRemainCnt(throttler,cntPerSec);
+            throttler.tell(new IncreseCnt(), null);
+            //동기처리는 이곳에...
+        }
+
+        // then : 모두 처리가되는지 검증
+        int remainCnt = wairForAllCompleted(throttler);
+        Assert.assertEquals(0,remainCnt);
     }
 }
