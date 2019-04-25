@@ -58,6 +58,7 @@ public class ThrottlerActorTest {
         // given
         int bucketSize = 10; //최초 버킷...
         int releaseBucketSppedSec = 1;
+        int totalCnt = 0;
 
         ActorRef throttler = system.actorOf(ThrottlerActor.props(bucketSize,releaseBucketSppedSec, materializer), "throttler");
 
@@ -66,7 +67,8 @@ public class ThrottlerActorTest {
             waitForUnderRemainCnt(throttler);
             throttler.tell(new DesBucket(), null);
             //동기처리는 이곳에...
-            log.info("========= continue job ==========");
+            totalCnt++;
+            log.info("========= continue job{} ==========",totalCnt);
         }
 
         //10초간 휴식
@@ -74,12 +76,15 @@ public class ThrottlerActorTest {
 
         Thread.sleep(10000);
 
+        log.info("====== resume task....");
+
         //10개 추가처리
         for (int i = 0; i < 10; i++) {
             waitForUnderRemainCnt(throttler);
             throttler.tell(new DesBucket(), null);
             //동기처리는 이곳에...
-            log.info("========= continue job ==========");
+            totalCnt++;
+            log.info("========= continue job{} ==========",totalCnt);
         }
 
     }
