@@ -8,6 +8,7 @@ import akka.testkit.javadsl.TestKit;
 import com.typesafe.config.ConfigFactory;
 import com.webnori.psmon.cloudspring.library.akkatools.AkkaUtil;
 import com.webnori.psmon.cloudspring.lobbyapi.config.AppConfiguration;
+import com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.AvableCall;
 import com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.CheckCnt;
 import com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.IncreseCnt;
 import org.junit.AfterClass;
@@ -39,6 +40,16 @@ public class ThrottlerActorTest {
         system = null;
     }
 
+    private void waifForAvable(ActorRef throttler) throws Exception {
+        while (true) {
+            Boolean avableCall = (Boolean) AkkaUtil.AskToActor(throttler, new AvableCall(), 5);
+            if (avableCall) {
+                break;
+            }
+            Thread.sleep(500);
+        }
+    }
+
     @Test
     public void testIt() throws Exception {
         // given
@@ -46,14 +57,15 @@ public class ThrottlerActorTest {
         ActorRef throttler = system.actorOf(com.webnori.psmon.cloudspring.lobbyapi.domain.throttle.ThrottlerActor.props(cntPerSec, materializer), "throttler");
 
         // when
-        for (int i = 0; i < 100; i++) {
-            while (true) {
-                int remainCnt = (int) AkkaUtil.AskToActor(throttler, new CheckCnt(), 5);
-                if (remainCnt < cntPerSec) {
-                    break;
-                }
-                Thread.sleep(500);
-            }
+        for (int i = 0; i < 13; i++) {
+            waifForAvable(throttler);
+            throttler.tell(new IncreseCnt(), null);
+        }
+
+        Thread.sleep(1000*9);
+
+        for (int i = 0; i < 10; i++) {
+            waifForAvable(throttler);
             throttler.tell(new IncreseCnt(), null);
         }
 
