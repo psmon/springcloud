@@ -43,7 +43,7 @@ public class ThrottlerActorTest {
         system = null;
     }
 
-    private void waitForUnderRemainCnt(ActorRef throttler) throws Exception {
+    private void waitForEnableBucket(ActorRef throttler) throws Exception {
         while (true) {
             boolean isEnoughBucket = (boolean) AkkaUtil.AskToActor(throttler, new AvableCall(), 5);
             if (isEnoughBucket) {
@@ -64,7 +64,7 @@ public class ThrottlerActorTest {
 
         // 동기적 API 20 호출 시나리오
         for (int i = 0; i < 20; i++) {
-            waitForUnderRemainCnt(throttler);
+            waitForEnableBucket(throttler);
             throttler.tell(new DesBucket(), null);
             //동기처리는 이곳에...
             totalCnt++;
@@ -80,7 +80,7 @@ public class ThrottlerActorTest {
 
         //10개 추가처리
         for (int i = 0; i < 10; i++) {
-            waitForUnderRemainCnt(throttler);
+            waitForEnableBucket(throttler);
             throttler.tell(new DesBucket(), null);
             //동기처리는 이곳에...
             totalCnt++;
