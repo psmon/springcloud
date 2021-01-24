@@ -2,7 +2,8 @@
 
 Spring Cloud를 이용하여 멀티플레이 가능한 게임시스템에 활용할수 있는 실제 작동가능한 아키텍트를  구성해 보았습니다.
 
-글로벌 개발사,글로벌 게임서비스에 몸담고 있을때 작성되어 구글링 영문수준이니 양해 해주세요  
+글로벌 개발사,글로벌 게임서비스에 몸담고 있을때 작성된 토이프로젝트이며
+구글링 영문수준이니 양해 해주세요  
 
 ## Goals
 - Distributed Micro Game(or Other) Services Using Spring Cloud
